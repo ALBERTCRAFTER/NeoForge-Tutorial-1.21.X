@@ -1,6 +1,7 @@
 package net.albertcrafter.tutorialmod;
 
 import net.albertcrafter.tutorialmod.block.ModBlocks;
+import net.albertcrafter.tutorialmod.item.ModCreativeModeTabs;
 import net.albertcrafter.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -40,6 +41,9 @@ public class TutorialMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        //registro de las pestañas del modo crativo para el mod
+        ModCreativeModeTabs.register(modEventBus);
+
         //registro de elementos agregados por el mod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -57,6 +61,7 @@ public class TutorialMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        /*
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.BISMUTH);
             event.accept(ModItems.RAW_BISMUTH);
@@ -66,6 +71,7 @@ public class TutorialMod {
             event.accept(ModBlocks.BISMUTH_BLOCK);
             event.accept(ModBlocks.BISMUTH_ORE);
         }
+        */
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
